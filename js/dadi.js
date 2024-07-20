@@ -9,9 +9,6 @@ while (userInput > 5 || userInput < 1 || isNaN(userInput)) {
     userInput = parseInt(prompt("Hai inserito un valore non valido! - Scegli un numero da 1 a 5"));
 }
 
-
-
-
 function getRandomArbitrary(min, max) { // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
     return Math.random() * (max - min) + min;
 }
