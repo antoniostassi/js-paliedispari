@@ -1,5 +1,32 @@
 
-let userPari = true;
+
+let gameQuestion = prompt("Cosa scegli? Pari o Dispari?");
+
+if (gameQuestion.toLowerCase() == "pari") {
+    console.log(gameQuestion.toLowerCase());
+}
+
+while (gameQuestion.toLowerCase() != "pari" || gameQuestion.toLowerCase() != "dispari") {
+    if (gameQuestion.toLowerCase() == "pari"){
+        break;
+    }
+    else if (gameQuestion.toLowerCase() == "dispari"){
+        break;
+    }
+    else {
+        gameQuestion = prompt("Hai inserito un valore non valido. Rispondi: pari oppure dispari");
+    }
+}
+
+let userPari = false; 
+
+if (gameQuestion.toLowerCase() == "pari") {
+    userPari = true;
+    alert("Hai scelto Pari.");
+} else {
+    userPari = false;
+    alert("Hai scelto Dispari.");
+}
 
 let userInput = parseInt(prompt("Scegli un numero da 1 a 5"));
 const computerInput = parseInt(getRandomArbitrary(1,5));
@@ -16,10 +43,8 @@ function getRandomArbitrary(min, max) { // https://developer.mozilla.org/en-US/d
 function winOrLose(userNum, aiNum) {
     let sum = userNum + aiNum;
     if(userPari && (sum % 2 == 0)) {
-        alert("Hai scelto Pari.");
         alert(userNum + " | " + aiNum + " Risultato = " + sum + " | Hai vinto.");
     } else if(!userPari && (sum % 2 != 0)) {
-        alert("Hai scelto Dispari.\n--");
         alert(userNum + " | " + aiNum + " Risultato = " + sum + " | Hai vinto.");
     } else {
         alert(userNum + " | " + aiNum + " Risultato = " + sum + " | Hai perso.");
